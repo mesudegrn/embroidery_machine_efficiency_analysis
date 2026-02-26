@@ -1,1 +1,38 @@
-🧵 Kizilay Shelter Systems: Embroidery Optimization & Predictive AnalysisThis repository contains a specialized R-based statistical framework developed for Kizilay Shelter Systems. It analyzes industrial embroidery machine data to optimize production speed, minimize error rates, and forecast manufacturing timelines using advanced regression techniques.🚀 Technical OverviewThe core of this project is to find the optimal operating point for manufacturing. It doesn't just describe what happened; it predicts the best way to run the machines.1. Polynomial OptimizationThe script utilizes Quadratic Polynomial Regression ($y = \beta_0 + \beta_1x + \beta_2x^2$) to identify the vertex of efficiency curves:Optimal Machine Speed: Finding the speed that minimizes unit production time.Error Minimization: Analyzing the "U-curve" relationship between machine speed and the frequency of errors (thread breaks, needle snaps, etc.).Batch Size Optimization: Determining the ideal number of fabric units to process simultaneously.2. Predictive ModelingA Multiple Linear Regression (MLR) model is implemented to forecast production outcomes based on:Predictors: Fabric count, machine speed, worker count, embroidery type, and historical error data.Intervals: The model provides 95% Prediction Intervals, allowing management to see not just the "expected" time, but the statistical range of production duration.3. Quality & Comparative AnalysisANOVA: Statistical significance testing of production variables.Workforce Analysis: Comparative Boxplots to evaluate how worker count influences unit time and error distribution.Error Aggregation: Calculation of a composite "Error Score" from multiple failure modes.🛠️ Tech StackLanguage: RData Processing: readxl, openxlsx, writexlStatistical Analysis: stats (lm, poly, anova), qcc (Quality Control Charts)Visualization: Base R graphics (Polynomial fits, Boxplots, Residual Analysis)📊 Key ResultsOptimization: Automates the detection of the "Minimum Point" for unit time.Validation: Includes code for checking model assumptions (Residual analysis, Histograms).Forecasting: Generates a 15-unit production forecast based on average machine performance and specific embroidery types (e.g., "Kırmızı Arma").🚀 How to RunClone: git clone https://github.com/yourusername/kizilay-embroidery-opt.gitPath: Ensure your data is located at C:/kizilay/data/nakis_verileri.xlsx (or modify the path in the script).Dependencies:Rinstall.packages(c("readxl", "openxlsx", "writexl", "qcc"))
+# 🧵 Kizilay Shelter Systems: Embroidery Production Optimization
+
+This repository contains a specialized **R-based statistical framework** developed for **Kizilay Shelter Systems**. The project applies advanced data modeling techniques to optimize industrial embroidery machine performance and minimize production errors in humanitarian aid manufacturing.
+
+---
+
+## 🎯 Project Overview
+In a production environment where every second counts, this tool identifies the "mathematical sweet spot" for manufacturing. By analyzing machine logs, it determines the most efficient speed and labor configuration to maximize output without compromising quality.
+
+## 🛠️ Technical Features & Statistical Methods
+
+### 1. Polynomial Optimization (Quadratic Modeling)
+The script uses **Polynomial Regression** ($y = \beta_0 + \beta_1x + \beta_2x^2$) to detect the vertex of efficiency curves. It automatically identifies:
+* **Optimal Machine Speed:** The exact RPM that minimizes unit production time.
+* **Error Minimization:** Analyzing the relationship between speed and failure modes (thread breaks, needle snaps, etc.) to find the "safest" operating speed.
+* **Batch Optimization:** Determining how fabric quantity impacts the unit processing time.
+
+### 2. Predictive Analytics
+A **Multiple Linear Regression (MLR)** model is used to forecast production outcomes. 
+* **Variables:** Incorporates fabric count, machine speed, worker count, embroidery type, and historical error rates.
+* **Confidence:** Generates **95% Prediction Intervals** for production forecasting, allowing for robust supply chain planning.
+
+### 3. Quality Control & Performance
+* **ANOVA:** Performs Analysis of Variance to determine which factors (e.g., worker count vs. embroidery type) significantly impact production speed.
+* **Error Diagnostics:** Aggregates various failure types into a composite "Error Score" for holistic machine health monitoring.
+* **Comparative Visuals:** Uses Boxplots and Regression Plots to visualize performance across different shifts and machine setups.
+
+## 📊 Tech Stack
+* **Language:** R
+* **Libraries:** * `readxl` & `openxlsx`: Data I/O
+  * `stats`: Linear and Polynomial modeling
+  * `qcc`: Quality Control Charts
+  * `graphics`: High-resolution regression and residual plots
+
+## 🚀 How to Use
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/yourusername/kizilay-embroidery-optimization.git](https://github.com/yourusername/kizilay-embroidery-optimization.git)
